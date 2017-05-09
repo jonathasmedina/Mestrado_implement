@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">    
+    
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"> </script>
+
+    <script type="text/javascript" src="mapa_js.js"></script>    
+    <script type="text/javascript" src="rotas.js"></script> 
+
+    <link rel="stylesheet" href="mapa_css.css">
+
+    <title>Google Maps - Acessível</title>
+    
+</head>
+
+<body>
+    
+    <a href="javascript: aumentazoom();"> Aumentar o zoom do mapa. </a>
+    <br>
+    <a href="javascript: diminuizoom();"> Diminuir o zoom do mapa. </a>
+    <br>
+    <a href="javascript: centralizar();"> Centralizar mapa na localidade do usuário. </a>
+    <br>
+    Selecione tipo de mapa:
+     <select name="op" id="op" onchange="alterartipo(op)">
+        <option value="MAPA DE ESTRADAS">MAPA DE ESTRADAS</option>
+        <option value="SATÉLITE">SATÉLITE</option>
+        <option value="TERRENO">TERRENO</option>
+        <option value="HÍBRIDO">HÍBRIDO</option>
+     </select>
+    <br>
+    <br>
+    <form name="rotas" id="rotas" onsubmit="calcularota()">        
+        Insira endereço de origem: <input type="text" name="origem"><br>
+        Insira endereço de destino: <input type="text" name="destino">
+        <br>
+        <input type="submit" value="Calcular Rota" onclick="calcularota()">
+    </form>
+    
+    
+   <div id="googleMap" style="width:500px;height:380px;"></div>
+
+
+</body>
+</html>
